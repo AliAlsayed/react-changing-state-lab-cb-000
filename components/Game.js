@@ -27,7 +27,7 @@ export default class Game extends React.Component {
     this.setState(prevState => ({
         board: {
             ...prevState.board,
-            [prevState.board[i].name]: this.state.turn,
+            [prevState.board[i]]: this.state.turn,
         },
     }));
   }
