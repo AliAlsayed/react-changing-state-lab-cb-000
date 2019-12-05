@@ -24,6 +24,8 @@ export default class Game extends React.Component {
 
   handleClick (i, ev) {
     ev.preventDefault()
+    this.state.board = this.state.turn
+    this.forceUpdate()
   }
 
   getWinner () {
