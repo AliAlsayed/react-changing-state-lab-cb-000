@@ -24,9 +24,12 @@ export default class Game extends React.Component {
 
   handleClick (i, ev) {
     ev.preventDefault()
-    // this.setState({
-    //   items: update(this.state.board, {i:{$set: 'updated field name'}})
-    // })
+    this.setState(prevState => ({
+        board: {
+            ...prevState.board,
+            [prevState.board[i].name]: this.state.turn,
+        },
+    }));
   }
 
   getWinner () {
