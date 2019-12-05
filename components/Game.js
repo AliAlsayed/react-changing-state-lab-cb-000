@@ -29,7 +29,7 @@ export default class Game extends React.Component {
             ...prevState.board,
             [prevState.board[i].name]: this.state.turn,
         },
-    }));
+    ));
   }
 
   getWinner () {
