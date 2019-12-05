@@ -5,7 +5,11 @@ export default class Status extends React.Component {
     const { winner, isComplete } = this.props;
     return (
       <div>
-        {isComplete ? (winner ? `${winner} wins` : 'Tie') : ''}
+        {
+          if(isComplete){
+            winner ? `${winner} wins` : 'Tie'
+          }
+        }
         //{ winner ? `${winner} wins` : 'Tie'}
       </div>
     );
