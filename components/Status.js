@@ -6,7 +6,7 @@ export default class Status extends React.Component {
     return (
       <div>
         {isComplete ? winner ? `${winner} wins` : 'Tie' : ''}
-        { winner ? `${winner} wins` : 'Tie'}
+        //{ winner ? `${winner} wins` : 'Tie'}
       </div>
     );
   }
