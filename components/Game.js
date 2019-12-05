@@ -44,7 +44,7 @@ export default class Game extends React.Component {
     if (this.state.board.every(notNull)){
       return 'Tie'
     }
-    return getWinner() || this.state.board.every(notNull)
+    return ''
   }
 
   render () {
