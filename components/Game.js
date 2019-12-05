@@ -27,19 +27,19 @@ export default class Game extends React.Component {
   }
 
   getWinner () {
-    const turn = this.state.turn
-    for(var i = 0; i < solutions.length; i++){
-      const comb = [this.state.board[solutions[i][0]], this.state.board[solutions[i][1]], this.state.board[solutions[i][2]]]
-      if (comb === [turn, turn, turn]){
-        return `${turn}`
-      }
-    }
+    const results = solutions.map(
+      (solution) => solution.map((i) => this.state.board[i]).join('')
+    );
+    const row = results.find(
+      (result) => result === 'XXX' || result === 'OOO'
+    );
+    return row && row[0];
   }
 
   isComplete () {
-    const notNull = (element) => element !== null
-    return getWinner() || this.state.board.every(notNull)
+    return this.state.board.every((field) => field);
   }
+
 
   render () {
     return (
