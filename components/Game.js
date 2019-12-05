@@ -38,6 +38,9 @@ export default class Game extends React.Component {
 
   isComplete () {
     const notNull = (element) => element !== null
+    if (getWinner()){
+      return getWinner()
+    }
     return getWinner() || this.state.board.every(notNull)
   }
 
